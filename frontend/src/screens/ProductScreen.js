@@ -90,7 +90,7 @@ export default function ProductScreen(props) {
                     Seller{' '}
                     <h2>
                       <Link to={`/seller/${product.seller._id}`}>
-                        {product.seller.seller.name}
+                        Klever
                       </Link>
                     </h2>
                     <Rating

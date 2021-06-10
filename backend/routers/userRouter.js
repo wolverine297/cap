@@ -50,12 +50,21 @@ userRouter.post(
 userRouter.post(
   '/register',
   expressAsyncHandler(async (req, res) => {
+
+    let isAdmin=false;
+    if(req.body.adminFlag=="on")
+    isAdmin=true
+    
+    console.log("adminFlag:"+req.body.adminFlag)
     const user = new User({
       name: req.body.name,
       email: req.body.email,
+      isAdmin: isAdmin,
       password: bcrypt.hashSync(req.body.password, 8),
     });
     const createdUser = await user.save();
+
+
     res.send({
       _id: createdUser._id,
       name: createdUser.name,

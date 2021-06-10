@@ -10,6 +10,7 @@ export default function RegisterScreen(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [adminFlag, setAdminFlag] = useState('');
 
   const redirect = props.location.search
     ? props.location.search.split('=')[1]
@@ -24,7 +25,8 @@ export default function RegisterScreen(props) {
     if (password !== confirmPassword) {
       alert('Password and confirm password are not match');
     } else {
-      dispatch(register(name, email, password));
+      console.log("adminFag:"+adminFlag);
+      dispatch(register(name, email, password,adminFlag));
     }
   };
   useEffect(() => {
@@ -80,6 +82,20 @@ export default function RegisterScreen(props) {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
         </div>
+
+        <div>
+          <label htmlFor="registerAsAdmin">
+          <input
+            type="checkbox"
+            id="registerAsAdmin"
+            placeholder="Enter confirm password"
+            onChange={(e) => setAdminFlag(e.target.value)}
+          ></input>
+          Register as admin
+          </label>
+        </div>
+
+
         <div>
           <label />
           <button className="primary" type="submit">

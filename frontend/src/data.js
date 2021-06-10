@@ -62,7 +62,7 @@ const data = {
     },
     {
       _id: '6',
-      name: 'Adidas Fit Pant',
+      name: 'South Indian Thali',
       category: 'Pants',
       image: '/images/p6.jpg',
       price: 139,

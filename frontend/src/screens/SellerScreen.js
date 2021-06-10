@@ -43,7 +43,7 @@ export default function SellerScreen(props) {
                   ></img>
                 </div>
                 <div className="p-1">
-                  <h1>{user.seller.name}</h1>
+                  <h1>Klever</h1>
                 </div>
               </div>
             </li>
